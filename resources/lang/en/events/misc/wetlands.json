@@ -4,7 +4,7 @@
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "frequency": 4,
-    "event_text": "Whilst m_c was poking around in the undergrowth, {PRONOUN/m_c/subject} ran nose first into a stinging nettle plant — Ouch!",
+    "event_text": "Whilst m_c was poking around in the undergrowth, {PRONOUN/m_c/subject} ran nose first into a stinging nettle plant.",
     "m_c": {
       "status": ["apprentice", "warrior", "elder", "kitten"]
     }
@@ -14,7 +14,7 @@
     "location": ["wetlands"],
     "season": ["newleaf", "greenleaf", "leaf-fall"],
     "frequency": 4,
-    "event_text": "m_c keeps seeing prophecy_list_sight/m_c in the water underpaw... {PRONOUN/m_c/subject/CAP} continues wading forward with {PRONOUN/m_c/poss} mission, debating the vision.",
+    "event_text": "m_c keeps seeing prophecy_list_sight/m_c in the water underpaw... {PRONOUN/m_c/subject/CAP} {VERB/m_c/continue/continues} wading forward with {PRONOUN/m_c/poss} mission, debating the vision.",
     "m_c": {
       "status": ["medicine cat", "medicine cat apprentice"],
       "skill": ["PROPHET,2"]

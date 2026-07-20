@@ -7,6 +7,9 @@ import i18n
 import ujson
 
 from scripts.cat.cats import Cat, BACKSTORIES
+from scripts.cat.save_load import load_faded_cat_ids
+from scripts.cat_relations.inheritance2 import inheritance_db
+from scripts.cat.save_load import get_faded_ids
 from ..cat.enums import CatGroup, CatRank
 from scripts.cat.pelts import Pelt
 from scripts.cat_relations.inheritance import Inheritance
@@ -15,19 +18,25 @@ from scripts.game_structure.game.switches import (
     switch_set_value,
     Switch,
 )
-from scripts.game_structure.localization import get_new_pronouns
+from ..cat.pronouns import get_new_pronouns
 from scripts.housekeeping.version import SAVE_VERSION_NUMBER
 from scripts.game_structure import constants
 from scripts.game_structure import game
 from ..cat.personality import Personality
 from ..cat.skills import CatSkills
 from ..cat.status import StatusDict
+from ..clan_resources.point_of_interest import (
+    clear_pois,
+    generate_and_add_new_poi,
+    PoiType,
+)
 from ..housekeeping.datadir import get_save_dir
 
 logger = logging.getLogger(__name__)
 
 
 def load_cats():
+    load_faded_cat_ids(switch_get_value(Switch.clan_save_id))
     try:
         json_load()
     except FileNotFoundError:
@@ -42,7 +51,7 @@ def load_cats():
 def json_load():
     Cat.all_cats.clear()
     Cat.all_cats_list.clear()
-    Cat.dead_cats.clear()
+
     all_cats = []
     clanname = switch_get_value(Switch.clan_list)[0]
     clan_cats_json_path = f"{get_save_dir()}/{clanname}/clan_cats.json"
@@ -178,9 +187,9 @@ def json_load():
             # converting old specialty saves into new scar parameter
             if "specialty" in cat or "specialty2" in cat:
                 if cat["specialty"] is not None:
-                    new_cat.pelt.scars.append(cat["specialty"])
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, cat["specialty"])
                 if cat["specialty2"] is not None:
-                    new_cat.pelt.scars.append(cat["specialty2"])
+                    new_cat.pelt.scars = (*new_cat.pelt.scars, cat["specialty2"])
 
             new_cat.adoptive_parents = (
                 cat["adoptive_parents"] if "adoptive_parents" in cat else []
@@ -279,7 +288,8 @@ def json_load():
                     if cat.get("driven_out"):
                         new_cat.status.change_group_nearness(CatGroup.PLAYER_CLAN_ID)
 
-            new_cat.dead_for = cat["dead_moons"]
+            if cat.get("dead_moons"):
+                new_cat.dead_for = cat["dead_moons"]
             new_cat.experience = cat["experience"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
@@ -315,7 +325,6 @@ def json_load():
             raise
 
     # replace cat ids with cat objects and add other needed variables
-    other_clan_cats = [c for c in Cat.all_cats_list if c.status.is_other_clancat]
     for cat in all_cats:
         if cat.status.rank in (CatRank.LEADER, CatRank.DEPUTY, CatRank.MEDICINE_CAT):
             if cat.status.group == CatGroup.STARCLAN:
@@ -349,26 +358,11 @@ def json_load():
             )
             switch_set_value(Switch.traceback, e)
             raise
-
-        cat.inheritance = Inheritance(cat)
-
-        try:
-            # initialization of thoughts
-            cat.thoughts(other_clan_cats=other_clan_cats)
-        except Exception as e:
-            logger.exception(
-                f"There was an error when thoughts for cat #{cat} are created."
-            )
-            switch_set_value(
-                Switch.error_message,
-                f"There was an error when thoughts for cat #{cat} are created.",
-            )
-            switch_set_value(Switch.traceback, e)
-            raise
-
-        # Save integrety checks
         if constants.CONFIG["save_load"]["load_integrity_checks"]:
             save_check()
+
+    inheritance_db.clear_stored_data()
+    inheritance_db.load_inheritances(Cat, get_faded_ids)
 
 
 def csv_load(all_cats):
@@ -502,7 +496,7 @@ def csv_load(all_cats):
                 )
                 the_cat.skill = attr[25]
                 if len(attr) > 28:
-                    the_cat.pelt.accessory = [attr[28]]
+                    the_cat.pelt.accessory = (attr[28],)
                 if len(attr) > 29:
                     the_cat.specialty2 = attr[29]
                 else:
@@ -692,7 +686,34 @@ def version_convert(version_info):
                     c.permanent_condition[con].pop("moons_with")
                 c.permanent_condition[con]["moon_start"] = game.clan.age - moons_with
 
+    # freshkill start for older clans
     if version < 3 and game.clan.freshkill_pile:
-        # freshkill start for older clans
         add_prey = game.clan.freshkill_pile.amount_food_needed() * 2
         game.clan.freshkill_pile.add_freshkill(add_prey)
+
+    # death history text revision
+    if version < 4:
+        for c in Cat.all_cats.values():
+            if not c.status.is_leader:
+                continue
+            for death in c.history.died_by:
+                if death["text"] == "multi_lives":
+                    # skip these as changing them will break stuff
+                    continue
+                death["text"] = (
+                    "m_c lost a life when {PRONOUN/m_c/subject} " + death["text"]
+                )
+                # check if a period is present and append one if not
+                if death["text"][-1] != ".":
+                    death["text"] += "."
+
+    # generate points of interest
+    if version < 5:
+        # remove any already loaded points of interest
+        clear_pois()
+
+        generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.GATHERING)
+        generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.MOONPLACE)
+
+        for i in range(3):
+            generate_and_add_new_poi(biome=game.clan.biome, category=PoiType.TERRAIN)

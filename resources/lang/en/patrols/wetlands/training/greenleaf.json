@@ -13,7 +13,7 @@
         "tags": [
             "romance"
         ],
-        "patrol_art": "fst_hunt_heat",
+        "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -25,15 +25,15 @@
         "frequency": 3,
         "chance_of_success": 60,
         "relationship_constraint": [
-            "not_mates"
+            "-mates"
         ],
         "intro_text": "This heat is just oppressive. The patrol gives up on battle training. The humidity blankets the wetlands, thick, suffocating, sapping their strength as surely as a viper's bite.",
         "decline_text": "Time to go back home and wait it out.",
         "success_outcomes": [
             {
-                "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight.",
+                "text": "The patrol staggers towards the nearest pond and flops into it — not to hunt, solely for the cool water. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour. There's nothing like swimming in greenleaf, and the patrol devolves into a splash-fight.",
                 "exp": 20,
-                "art": "gen_train_soggykitty_happy_warrior",
+                "art": "cat_sprites/gen_train_soggykittyhappy_Wr",
                 "relationships": [
                     {
                         "cats_to": [
@@ -47,7 +47,10 @@
                             "like",
                             "comfort"
                         ],
-                        "amount": 10
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a relaxing time in the water after a dreadfully hot patrol."
+                        }
                     },
                     {
                         "cats_to": [
@@ -60,16 +63,36 @@
                         "values": [
                             "like"
                         ],
-                        "amount": 5
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a fun water fight after a dreadfully hot patrol."
+                        }
                     }
                 ],
                 "frequency": 4
             },
             {
-                "text": "The patrol staggers towards the nearest pond and flops into it - not to hunt, solely for the cool water. r_c swipes water towards p_l and PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world",
+                "text": "The patrol staggers towards the nearest pond and flops into it — not to hunt, solely for the cool water. r_c swipes water towards p_l and {PRONOUN/p_l/subject} {VERB/p_l/laugh/laughs}, welcoming it and returning the favour, batting back in splash-fight. The rest of the patrol fades away. The two of them are in their own little world.",
                 "exp": 20,
-                "art": "fst_train_newleafmatesonadates_70locked1",
+                "art": "cat_sprites/fst_train_NL_matesonadates_WrWr",
                 "relationships": [
+                    {
+                        "cats_to": [
+                            "patrol"
+                        ],
+                        "cats_from": [
+                            "patrol"
+                        ],
+                        "mutual": false,
+                        "values": [
+                            "like",
+                            "comfort"
+                        ],
+                        "amount": 5,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a relaxing time in the water after a dreadfully hot patrol."
+                        }
+                    },
                     {
                         "cats_to": [
                             "p_l"
@@ -83,7 +106,10 @@
                             "comfort",
                             "romance"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from and cat_to had a fun water fight after a dreadfully hot patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -100,13 +126,11 @@
                         ],
                         "injuries": [
                             "dehydrated"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "reg_death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}.",
-                    "lead_death": "got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}"
+                    "death": "m_c got dehydrated training under the hot greenleaf sun, and it eventually sapped {PRONOUN/m_c/poss} life from {PRONOUN/m_c/object}."
                 },
                 "frequency": 4
             }

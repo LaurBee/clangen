@@ -11,7 +11,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},
@@ -31,7 +31,7 @@
                 "frequency": 1
             },
             {
-                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
+                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way — {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -88,9 +88,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             },
@@ -104,16 +102,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c died of injuries inflicted by an invading rogue."
                 },
                 "frequency": 3
             },
@@ -141,7 +135,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
@@ -205,9 +199,7 @@
                     "r_c"
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c was killed by an invading rogue."
                 },
                 "frequency": 3
             },
@@ -221,16 +213,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
                 "history_text": {
                     "scar": "m_c was scarred by an invading rogue.",
-                    "reg_death": "m_c was killed by an invading rogue.",
-                    "lead_death": "{VERB/m_c/were/was} killed by an invading rogue"
+                    "death": "m_c died of injuries inflicted by an invading rogue."
                 },
                 "frequency": 3
             }
@@ -248,7 +236,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -273,7 +261,7 @@
                 "frequency": 1
             },
             {
-                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
+                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} a warning and the rogue scrambles out of the way — {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The trespasser heeds the warning and leaves the mountains.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -290,7 +278,7 @@
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat and from_cat successfully drove a rogue away together."
+                            "cats_from": "cat_to and cat_from successfully drove a rogue away together."
                         }
                     }
                 ],
@@ -309,7 +297,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully defeated a rogue."
+                            "cats_from": "cat_from was impressed when cat_to skillfully defeated a rogue."
                         }
                     }
                 ]
@@ -340,7 +328,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                            "cats_from": "cat_from was impressed when cat_to skillfully deterred a rogue without bloodshed."
                         }
                     }
                 ],
@@ -360,7 +348,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of dogwood for something suspicious."
                         }
                     }
                 ]
@@ -380,7 +368,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat's trap for a rogue failed miserably."
+                            "cats_from": "cat_from watched as cat_to's trap for a rogue failed miserably."
                         }
                     }
                 ]
@@ -399,7 +387,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched to_cat fail to defeat a rogue."
+                            "cats_from": "cat_from watched cat_to fail to defeat a rogue."
                         }
                     }
                 ],
@@ -415,13 +403,13 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "BRIDGE"
                         ]
                     }
                 ],
-                "history_text": {"scar": "m_c was scarred by an invading rogue."},
+                "history_text": {
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "death": "m_c died of injuries inflicted by an invading rogue."
+                },
                 "relationships": [
                     {
                         "cats_to": ["s_c"],
@@ -430,7 +418,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat was taken off-guard by a rogue."
+                            "cats_from": "cat_from watched as cat_to was taken off-guard by a rogue."
                         }
                     }
                 ],
@@ -452,7 +440,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
         "min_cats": 2,
         "max_cats": 2,
         "min_max_status": {
@@ -481,7 +469,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -505,7 +493,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of dogwood for something suspicious."
                         }
                     }
                 ],
@@ -543,7 +531,7 @@
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "to_cat bravely confronted a rogue while on patrol with from_cat."
+                            "cats_from": "cat_to bravely confronted a rogue while on patrol with cat_from."
                         }
                     }
                 ],
@@ -559,14 +547,12 @@
                         ],
                         "injuries": [
                             "battle_injury"
-                        ],
-                        "scars": [
-                            "SNOUT"
                         ]
                     }
                 ],
                 "history_text": {
-                    "scar": "m_c was scarred by an invading rogue."
+                    "scar": "m_c was scarred by an invading rogue.",
+                    "death": "m_c died of injuries inflicted by an invading rogue."
                 },
                 "relationships": [
                     {
@@ -576,7 +562,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat was taken off-guard by a rogue."
+                            "cats_from": "cat_from watched as cat_to was taken off-guard by a rogue."
                         }
                     }
                 ],
@@ -596,7 +582,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {},
@@ -616,7 +602,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -642,13 +628,13 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat fought off a rogue alone"
+                            "cats_from": "cat_from was impressed when cat_to fought off a rogue alone"
                         }
                     }
                 ]
             },
             {
-                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way - {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c's patrol is impressed by {PRONOUN/s_c/poss} cunning.",
+                "text": "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. {PRONOUN/s_c/subject/CAP} {VERB/s_c/yowl/yowls} a warning and the rogue scrambles out of the way — {PRONOUN/s_c/subject} {VERB/s_c/want/wants} to scare them, not kill them. The intruder leaves the mountains, and s_c's patrol is impressed by {PRONOUN/s_c/poss} cunning.",
                 "exp": 10,
                 "stat_skill": [
                     "CLEVER,1"
@@ -665,7 +651,7 @@
                         "values": ["respect", "comfort", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat scared a rogue off the territory."
+                            "cats_from": "cat_from was impressed when cat_to scared a rogue off the territory."
                         }
                     }
                 ],
@@ -698,7 +684,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                            "cats_from": "cat_from was impressed when cat_to skillfully deterred a rogue without bloodshed."
                         }
                     }
                 ]
@@ -717,7 +703,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of a dogwood for something suspicious."
                         }
                     }
                 ]
@@ -736,7 +722,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched to_cat fail to defeat a rogue."
+                            "cats_from": "cat_from watched cat_to fail to defeat a rogue."
                         }
                     }
                 ],
@@ -757,7 +743,7 @@
                         "values": ["respect", "trust"],
                         "amount": -10,
                         "log": {
-                            "cats_from": "from_cat watched as to_cat's trap for a rogue failed miserably."
+                            "cats_from": "cat_from watched as cat_to's trap for a rogue failed miserably."
                         }
                     }
                 ]
@@ -778,7 +764,7 @@
         "tags": [
             "app1_mentored"
         ],
-        "patrol_art": "gen_bord_trackrogue",
+        "patrol_art": "cat_sprites/gen_bord_trackrogue_WrRg",
         "min_cats": 3,
         "max_cats": 6,
         "min_max_status": {
@@ -807,7 +793,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat and to_cat drove off rogues together."
+                            "cats_from": "cat_from and cat_to drove off rogues together."
                         }
                     }
                 ],
@@ -831,7 +817,7 @@
                         "values": ["respect", "trust"],
                         "amount": -5,
                         "log": {
-                            "cats_from": "from_cat saw to_cat mistake the scent of a dogwood for something suspicious."
+                            "cats_from": "cat_from saw cat_to mistake the scent of a dogwood for something suspicious."
                         }
                     }
                 ],
@@ -869,7 +855,7 @@
                         "values": ["respect", "trust"],
                         "amount": 5,
                         "log": {
-                            "cats_from": "from_cat was impressed when to_cat skillfully deterred a rogue without bloodshed."
+                            "cats_from": "cat_from was impressed when cat_to skillfully deterred a rogue without bloodshed."
                         }
                     }
                 ],
@@ -889,7 +875,7 @@
             "border"
         ],
         "tags": [],
-        "patrol_art": "gen_bord_shortswim",
+        "patrol_art": "backgrounds/gen_shortswim",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {},

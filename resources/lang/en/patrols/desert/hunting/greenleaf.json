@@ -10,14 +10,11 @@
             "hunting"
         ],
         "tags": [],
-        "patrol_art": "gen_hunt_heat",
+        "patrol_art": "cat_sprites/gen_hunt_heat_WrWr",
         "min_cats": 1,
         "max_cats": 1,
         "min_max_status": {
-            "all apprentices": [
-                -1,
-                -1
-            ],
+            "all apprentices": [ -1, -1 ],
             "normal adult": [
                 1,
                 6
@@ -37,7 +34,7 @@
                 "frequency": 4
             },
             {
-                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
+                "text": "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day — except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
                 "exp": 15,
                 "prey": [
                     "small"
@@ -87,8 +84,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "m_c died from heatstroke.",
-                    "lead_death": "died from heatstroke"
+                    "death": "m_c died from heatstroke."
                 },
                 "frequency": 3
             }
@@ -121,7 +117,7 @@
         "chance_of_success": 50,
         "success_outcomes": [
             {
-                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
+                "text": "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day — except their burrow is occupied, and app1 instead has to wait out the heat in the uncomfortable shade of a cactus.",
                 "exp": 15,
                 "prey": [
                     "small"
@@ -179,8 +175,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
+                    "death": "This cat died from heat stroke."
                 },
                 "frequency": 3
             },
@@ -194,14 +189,11 @@
                         ],
                         "injuries": [
                             "heat exhaustion"
-                        ],
-                        "scars": []
+                        ]
                     }
                 ],
                 "history_text": {
-                    "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
+                    "death": "m_c got heatstroke on patrol and never recovered."
                 },
                 "frequency": 3
             },
@@ -224,8 +216,7 @@
                 ],
                 "history_text": {
                     "scar": "This cat got heatstroke while on a patrol.",
-                    "reg_death": "This cat died from heat stroke.",
-                    "lead_death": "died from heatstroke"
+                    "death": "This cat died from heat stroke."
                 },
                 "frequency": 3
             }

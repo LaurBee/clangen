@@ -11,7 +11,7 @@
             "training"
         ],
         "tags": [],
-        "patrol_art": "gen_train_ghost",
+        "patrol_art": "cat_sprites/gen_train_ghost_WrWrWr",
         "min_cats": 4,
         "max_cats": 6,
         "min_max_status": {
@@ -26,10 +26,10 @@
             "STORY,1"
         ],
         "intro_text": "Gather round, gather round. p_l sits in the center of the group and drops {PRONOUN/p_l/poss} voice down low as a hush falls. Today, {PRONOUN/p_l/subject}'ll tell the story of StarClan's Great Anger.",
-        "decline_text": "A leaf-fall rain shower chooses that moment to break - thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
+        "decline_text": "A leaf-fall rain shower chooses that moment to break — thematic, perhaps, but wet. The cats decide to pick up the story some other time.",
         "success_outcomes": [
             {
-                "text": "At first, few but the medicine cats noticed how harsh this leaf-fall was: the snows early, the prey scarce. But all cats noticed on the day StarClan hissed - the great sun itself went dark under their anger. All paid heed to the omens then, and the Clans turned back to StarClan, begging for life and sun to return. They learned a lesson not soon forgotten.",
+                "text": "At first, few but the medicine cats noticed how harsh this leaf-fall was: the snows early, the prey scarce. But all cats noticed on the day StarClan hissed — the great sun itself went dark under their anger. All paid heed to the omens then, and the Clans turned back to StarClan, begging for life and sun to return. They learned a lesson not soon forgotten.",
                 "exp": 40,
                 "relationships": [
                     {
@@ -39,12 +39,15 @@
                         "cats_from": [
                             "patrol"
                         ],
-                        "mutual": false,
+                        "mutual": true,
                         "values": [
-                            "respect",
-                            "trust"
+                            "like"
                         ],
-                        "amount": 10
+                        "amount": 10,
+                        "log": {
+                            "cats_from": "cat_from appreciated the story cat_to told on patrol.",
+                            "cats_to": "cat_to appreciated cat_from listening to {PRONOUN/cat_to/poss} story on patrol."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -52,22 +55,26 @@
         ],
         "fail_outcomes": [
             {
-                "text": "r_c refuses to believe their ancestors ever blotted out the sun - not that they couldn't, but that they wouldn't ever hurt the Clans, their own beloved descendants.",
+                "text": "r_c refuses to believe their ancestors ever blotted out the sun — not that they couldn't, but that they wouldn't ever hurt the Clans, their own beloved descendants.",
                 "exp": 0,
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "r_c"
                         ],
                         "mutual": false,
                         "values": [
                             "respect",
+                            "comfort",
                             "like"
                         ],
-                        "amount": 5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from refused to believe the story cat_to told could ever be true."
+                        }
                     }
                 ],
                 "frequency": 4
@@ -84,10 +91,10 @@
                 "relationships": [
                     {
                         "cats_to": [
-                            "r_c"
+                            "p_l"
                         ],
                         "cats_from": [
-                            "p_l"
+                            "s_c"
                         ],
                         "mutual": false,
                         "values": [
@@ -95,21 +102,27 @@
                             "trust",
                             "like"
                         ],
-                        "amount": -5
+                        "amount": -10,
+                        "log": {
+                            "cats_from": "cat_from disliked how cat_to's story depicted cats as powerless to StarClan."
+                        }
                     },
                     {
                         "cats_to": [
-                            "r_c"
+                            "patrol"
                         ],
                         "cats_from": [
-                            "patrol"
+                            "s_c"
                         ],
                         "mutual": false,
                         "values": [
-                            "respect",
-                            "trust"
+                            "like",
+                            "respect"
                         ],
-                        "amount": -5
+                        "amount": -5,
+                        "log": {
+                            "cats_from": "cat_from disliked how cat_to tolerated a clearly disempowering story."
+                        }
                     }
                 ],
                 "frequency": 4

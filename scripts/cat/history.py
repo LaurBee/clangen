@@ -7,7 +7,7 @@ import ujson
 from scripts.cat.enums import CatGroup
 from scripts.cat.skills import SkillPath
 from scripts.game_structure import game
-from scripts.utility import adjust_list_text
+from scripts.events_module.text_adjust import adjust_list_text
 
 
 class History:
@@ -286,6 +286,7 @@ class History:
             SkillPath.RUNNER: ["running"],
             SkillPath.CLIMBER: ["climbing"],
             SkillPath.SWIMMER: ["swimming"],
+            SkillPath.STEALTH: ["stealth", "deception"],
             SkillPath.SPEAKER: ["arguing"],
             SkillPath.MEDIATOR: ["resolving arguments"],
             SkillPath.CLEVER: ["solving problems"],

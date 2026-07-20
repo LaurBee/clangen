@@ -8,13 +8,11 @@ from .ChooseMateScreen import ChooseMateScreen
 from .ChooseMentorScreen import ChooseMentorScreen
 from .ClanScreen import ClanScreen
 from .ClanSettingsScreen import ClanSettingsScreen
-from .ClearingScreen import ClearingScreen
 from .EventEditScreen import EventEditScreen
 from .EventsScreen import EventsScreen
 from .FamilyTreeScreen import FamilyTreeScreen
 from .LeaderDenScreen import LeaderDenScreen
 from .ListScreen import ListScreen
-from .MakeClanScreen import MakeClanScreen
 from .MedDenScreen import MedDenScreen
 from .MediationScreen import MediationScreen
 from .PatrolScreen import PatrolScreen
@@ -28,6 +26,13 @@ from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
 from .enums import GameScreen
+from .make_clan_screens.ChooseCampScreen import ChooseCampScreen
+from .make_clan_screens.ChooseCardsScreen import ChooseCardsScreen
+from .make_clan_screens.ChooseCatsScreen import ChooseCatsScreen
+from .make_clan_screens.ChooseModeScreen import ChooseModeScreen
+from .make_clan_screens.ChooseNameScreen import ChooseNameScreen
+from .make_clan_screens.ChooseSymbolScreen import ChooseSymbolScreen
+from .make_clan_screens.ClanCreatedScreen import ClanCreatedScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -61,12 +66,17 @@ def rebuild_all_screens():
         GameScreen.CEREMONY: CeremonyScreen,
         GameScreen.CHANGE_ROLE: RoleScreen,
         GameScreen.SPRITE_INSPECT: SpriteInspectScreen,
-        GameScreen.MAKE_CLAN: MakeClanScreen,
+        GameScreen.MAKE_CLAN_CHOOSE_MODE: ChooseModeScreen,
+        GameScreen.MAKE_CLAN_CHOOSE_CARDS: ChooseCardsScreen,
+        GameScreen.MAKE_CLAN_CHOOSE_NAME: ChooseNameScreen,
+        GameScreen.MAKE_CLAN_CHOOSE_CATS: ChooseCatsScreen,
+        GameScreen.MAKE_CLAN_CHOOSE_CAMP: ChooseCampScreen,
+        GameScreen.MAKE_CLAN_CHOOSE_SYMBOL: ChooseSymbolScreen,
+        GameScreen.MAKE_CLAN_CLAN_CREATED: ClanCreatedScreen,
         GameScreen.ALLEGIANCES: AllegiancesScreen,
         GameScreen.CAMP: ClanScreen,
         GameScreen.LIST: ListScreen,
         GameScreen.MED_DEN: MedDenScreen,
-        GameScreen.CLEARING: ClearingScreen,
         GameScreen.WARRIOR_DEN: WarriorDenScreen,
         GameScreen.LEADER_DEN: LeaderDenScreen,
         GameScreen.EVENTS: EventsScreen,
